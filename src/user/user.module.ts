@@ -2,6 +2,7 @@ import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { UserConsumer } from './user.consumer';
 import { UserController } from './user.controller';
+import { UsersListener } from './user.listner';
 import { UserService } from './user.service';
 
 @Module({
@@ -11,6 +12,6 @@ import { UserService } from './user.service';
     }),
   ],
   controllers: [UserController],
-  providers: [UserService, UserConsumer],
+  providers: [UserService, UserConsumer, UsersListener],
 })
 export class UserModule {}

@@ -3,17 +3,18 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
-
+import { EventEmitterModule } from '@nestjs/event-emitter';
 @Module({
   imports: [
     BullModule.forRoot({
       redis: {
-        host: 'u',
+        host: 'usw',
         port: 33210,
-        password: 'c',
+        password: 'c65',
       },
     }),
     UserModule,
+    EventEmitterModule.forRoot(),
   ],
   controllers: [AppController],
   providers: [AppService],
